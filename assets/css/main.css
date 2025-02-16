@@ -290,15 +290,25 @@ a{
 .menuSection:nth-child(odd){
     border-right: 1px solid #1285c5;
 }
+.menuSection_visualLink{
+    cursor: pointer; /* カーソルをポインタに */
+}
+.menuSection_visualLink:hover .menuSection_image{
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in; /* 速く拡大 */
+}
 
 .menuSection_visual{
     width: 100%;
     height: auto;
+    overflow: hidden; /* はみ出た部分を隠す */
 }
 
 .menuSection_image{
     width: 100%;
     height: 400px;
+    object-fit: cover;
+    transition: transform 1s ease-out; /* ゆっくり戻す */
 }
 
 .menuSection_inner{
@@ -460,15 +470,24 @@ a{
 .blog_inner{
     padding: 2vw;
 }
-
+.blog_visualLink{
+    cursor: pointer; /* カーソルをポインタに */
+}
+.blog_visualLink:hover .blog_image{
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in; /* 速く拡大 */
+}
 
 .blog_visual{
     width: 100%;
     height: auto;
+    overflow: hidden; /* はみ出た部分を隠す */
 }
 .blog_image{
     width: 100%;
     height: 32vh;
+    object-fit: cover;
+    transition: transform 1s ease-out; /* ゆっくり戻す */
 }
 
 .blog_container{
@@ -584,6 +603,14 @@ a{
 
 .info_inner{
     padding-bottom: 3rem;
+    cursor: pointer;
+}
+.info_link{
+    display: block;
+    font-size: 1.1rem;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
     cursor: pointer;
 }
 .info_title{
@@ -826,6 +853,7 @@ a{
 .mainSection_image{
     width: 100%;
     height: 600px;
+    object-fit: cover;
 
 }
 
@@ -843,15 +871,25 @@ a{
 .menuSection:nth-child(odd){
     border-right: 1px solid #1285c5;
 }
+.menuSection_visualLink{
+    cursor: pointer; /* カーソルをポインタに */
+}
+.menuSection_visualLink:hover .menuSection_image{
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in; /* 速く拡大 */
+}
 
 .menuSection_visual{
     width: 100%;
     height: auto;
+    overflow: hidden; /* はみ出た部分を隠す */
 }
 
 .menuSection_image{
     width: 100%;
     height: 250px;
+    object-fit: cover;
+    transition: transform 1s ease-out; /* ゆっくり戻す */
 }
 
 .menuSection_inner{
@@ -1019,15 +1057,25 @@ a{
     padding: 3vw;
 }
 
+.blog_visualLink{
+    cursor: pointer; /* カーソルをポインタに */
+}
+.blog_visualLink:hover .blog_image{
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in; /* 速く拡大 */
+}
 
 .blog_visual{
     width: 100%;
     height: auto;
     /* padding: 5%; */
+    overflow: hidden; /* はみ出た部分を隠す */
 }
 .blog_image{
     width: 100%;
     height: 35vw;
+    object-fit: cover;
+    transition: transform 1s ease-out; /* ゆっくり戻す */
 }
 
 .blog_container{
@@ -1129,6 +1177,14 @@ a{
 }
 .info_inner{
     padding-bottom: 3rem;
+    cursor: pointer;
+}
+.info_link{
+    display: block;
+    font-size: 1.1rem;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
     cursor: pointer;
 }
 .info_title{
@@ -1353,6 +1409,7 @@ a{
 .mainSection_image{
     width: 100%;
     height: 450px;
+    object-fit: cover;
 
 }
 
@@ -1368,17 +1425,27 @@ a{
 .menuSection:nth-child(odd) {
     border-right: none;
 }
+.menuSection_visualLink{
+    cursor: pointer; /* カーソルをポインタに */
+}
+.menuSection_visualLink:hover .menuSection_image{
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in; /* 速く拡大 */
+}
 
 .menuSection_visual{
     width: 100%;
     height: auto;
+    overflow: hidden; /* はみ出た部分を隠す */
 }
 
 .menuSection_image{
     width: 100%;
     height: 400px;
-
+    object-fit: cover;
+    transition: transform 1s ease-out; /* ゆっくり戻す */
 }
+
 
 .menuSection_inner{
     padding: 0;
@@ -1544,15 +1611,25 @@ a{
     width: 100%;
     padding: 3vw;
 }
+.blog_visualLink{
+    cursor: pointer; /* カーソルをポインタに */
+}
+.blog_visualLink:hover .blog_image{
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in; /* 速く拡大 */
+}
 
 .blog_visual{
     width: 100%;
     height: auto;
     /* padding: 5%; */
+    overflow: hidden; /* はみ出た部分を隠す */
 }
 .blog_image{
     width: 100%;
     height: 35vw;
+    object-fit: cover;
+    transition: transform 1s ease-out; /* ゆっくり戻す */
 }
 
 .blog_container{
@@ -1654,6 +1731,14 @@ a{
 }
 .info_inner{
     padding-bottom: 3rem;
+    cursor: pointer;
+}
+.info_link{
+    display: block;
+    font-size: 1.1rem;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
     cursor: pointer;
 }
 .info_title{
@@ -1866,18 +1951,36 @@ a{
 }
 
 .mainVisual_hero{
+    position: relative;
     width: 50%;
-    /* height: 500px; */
-    /* height: 45svh; */
-    overflow: hidden; /* 画像がはみ出る場合、非表示にする */
+    height: auto;
+    overflow: hidden;
     line-height: 0;
 }
 
 .mainVisual_image{
-    width: auto;
+    position: absolute;
+    top: 0;
+    /* left: 50%; */
+    transform: translateX(-50%);
+    width: 120%;
+    height: auto;
     height: 100%;
     object-fit: cover;
+    animation: slideLeftRight 10s ease-in-out infinite; /* 5秒間で右にスライド */
+    transition: transform 1s ease-out;
+
 }
+@keyframes slideLeftRight {
+    0% {
+        transform: translateX(-60px); /* 初期位置 */
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
 
 /* mainSection */
 .main_container{
@@ -2007,16 +2110,25 @@ a{
     border-right: 1px solid #1285c5;
 }
 
+.menuSection_visualLink{
+    cursor: pointer; /* カーソルをポインタに */
+}
+.menuSection_visualLink:hover .menuSection_image{
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in; /* 速く拡大 */
+}
 
 .menuSection_visual{
     width: 100%;
     height: auto;
+    overflow: hidden; /* はみ出た部分を隠す */
 }
 
 .menuSection_image{
     width: 100%;
     height: 250px;
-
+    object-fit: cover;
+    transition: transform 1s ease-out; /* ゆっくり戻す */
 }
 
 .menuSection_inner{
@@ -2187,15 +2299,24 @@ a{
 .blog_inner{
     padding: 2vw;
 }
-
+.blog_visualLink{
+    cursor: pointer; /* カーソルをポインタに */
+}
+.blog_visualLink:hover .blog_image{
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in; /* 速く拡大 */
+}
 
 .blog_visual{
     width: 100%;
     height: auto;
+    overflow: hidden; /* はみ出た部分を隠す */
 }
 .blog_image{
     width: 100%;
     height: 32vh;
+    object-fit: cover;
+    transition: transform 1s ease-out; /* ゆっくり戻す */
 }
 
 .blog_container{
