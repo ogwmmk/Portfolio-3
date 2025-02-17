@@ -24,23 +24,73 @@ a{
     position: relative;
     width: 100%;
 }
+
+.header_title{
+    position: fixed;
+    top: 0;
+    left: 5vw;
+    height: 150px;
+    font-size: 4rem;
+    letter-spacing: 0.1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    z-index: 1100; /* ヘッダーより前面に */
+    background-color: transparent; /* 初期状態では背景なし */
+    padding: 10px 20px;
+}
+
 .header_top{
-    position: sticky;
-    top: 0; /* 固定する位置を指定 */
+    position: absolute; /* 初期位置のまま */
+    bottom: 0;
+    left: 0;
     display: flex;
     justify-content: space-between;
     align-items: center; /* 垂直方向の中央揃え */
     width: 100%;
     height: 80px;
     padding: 0 15px;
+    border-top: 1px solid #1285c5;
     border-bottom: 1px solid #1285c5;
     background-color: #f8f6ed;
     z-index: 1000; /* 前面に表示 */
+    transition: all 0.3s ease-in-out;
 }
-.headerTop_title{
+.header_top.fixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-top: none;
+    height: 60px;
+}
+
+
+/* スクロール時にタイトルをヘッダー上に重ねる */
+.header_title.overlap {
+    top: 0;
+    left: 15px;
+    height: 60px;
+    font-size: 2rem; /* 小さくして一体化 */
+    background-color: #f8f6ed; /* ヘッダーと同じ背景 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid #1285c5;
+}
+
+/* .headerTop_title{
     font-size: 2.4rem;
     letter-spacing: 0.1em;
+} */
+
+/* スクロール時にタイトルを縮小 */
+.header_title.shrink {
+    top: 10px; /* ヘッダーにぴったり合う位置に調整 */
+    font-size: 2rem; /* 小さくして一体化 */
+    left: 15px;
 }
+
 
 .header_tab{
     display: none;
@@ -1800,28 +1850,78 @@ a{
     width: 100%;
     overflow: visible; /* スクロール範囲を制限しない */
 }
+
+.header_title{
+    position: fixed;
+    top: 0;
+    left: 5vw;
+    height: 150px;
+    font-size: 4rem;
+    letter-spacing: 0.1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    z-index: 1100; /* ヘッダーより前面に */
+    background-color: transparent; /* 初期状態では背景なし */
+    padding: 10px 20px;
+}
+
 .header_top{
-    position: sticky;
-    top: 0; /* 固定する位置を指定 */
+    position: absolute; /* 初期位置のまま */
+    bottom: 0;
+    left: 0;
     display: flex;
     justify-content: space-between;
     align-items: center; /* 垂直方向の中央揃え */
     width: 100%;
     height: 80px;
     padding: 0 15px;
+    border-top: 1px solid #1285c5;
     border-bottom: 1px solid #1285c5;
     background-color: #f8f6ed;
     z-index: 1000; /* 前面に表示 */
+    transition: all 0.3s ease-in-out;
+    /* &.fixed {
+        position: fixed;
+        top: 0;
+        + main {
+        padding-top: 100px;
+        }
+} */
 }
-/*
-.mainVisual_inner{
-    width: 50%;
+.header_top.fixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-top: none;
+    height: 60px;
+}
+
+
+/* スクロール時にタイトルをヘッダー上に重ねる */
+.header_title.overlap {
+    top: 0;
+    left: 15px;
+    height: 60px;
+    font-size: 2rem; /* 小さくして一体化 */
+    background-color: #f8f6ed; /* ヘッダーと同じ背景 */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 5vw;
-    border-right: 1px solid #1285c5;
-}*/
+    border-bottom: 1px solid #1285c5;
+}
+
+
+
+/* スクロール時にタイトルを縮小 */
+.header_title.shrink {
+    top: 10px; /* ヘッダーにぴったり合う位置に調整 */
+    font-size: 2rem; /* 小さくして一体化 */
+    left: 15px;
+}
+
+
 
 .header_logo{
     position: sticky;
@@ -1829,10 +1929,10 @@ a{
     display: flex;
 
 }
-.headerTop_title{
+/* .headerTop_title{
     font-size: 2.4rem;
     letter-spacing: 0.1em;
-}
+} */
 
 .header_tab{
     display: none;
