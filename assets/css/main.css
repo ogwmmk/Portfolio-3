@@ -96,16 +96,6 @@ a{
     display: none;
 }
 
-.header_tab span{
-    display: block;
-    width: 30px;
-    height: 2px; /* 線の太さ */
-    margin: 5px 0;
-    background-color: #1285c5; /* 線の色 */
-    border-radius: 1px; /* 線の端を丸くする */
-    transition: all 0.3s ease; /* アニメーション用のトランジション */
-}
-
 .header_menu{
     display: flex;
     align-items: center;
@@ -113,6 +103,7 @@ a{
 .header_nav{
     display: flex;
     align-items: center;
+    list-style: none;
 }
 .header_menuLink{
     padding-right: 2rem;
@@ -732,9 +723,39 @@ a{
     width: 100%;
     height: 60px;
     padding: 0 15px;
+    border-top: none;
     border-bottom: 1px solid #1285c5;
     background-color: #f8f6ed;
 }
+
+
+
+
+
+.header_title{
+    position: fixed;
+    top: 0;
+    left: 3vw;
+    height: 60px;
+    font-size: 2.5rem;
+    letter-spacing: 0.1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    z-index: 1100; /* ヘッダーより前面に */
+    background-color: transparent; /* 初期状態では背景なし */
+    padding: 10px 20px;
+}
+.header_title.overlap {
+    position: static !important; /* 固定解除 */
+    top: auto !important; /* 位置をデフォルトに戻す */
+    left: auto !important;
+    font-size: 3rem !important; /* 必要ならフォントサイズも調整 */
+    background-color: transparent !important; /* 背景も元に戻す */
+}
+
+
 
 .headerTop_title{
     font-size: 2.4rem;
@@ -743,12 +764,13 @@ a{
 
 .header_tab{
     display: grid;
+    cursor: pointer;
 }
 .header_tab span{
     display: block;
     width: 30px;
     height: 2px; /* 線の太さ */
-    margin: 2px 0;
+    margin: 3px 0;
     background-color: #1285c5; /* 線の色 */
     border-radius: 1px; /* 線の端を丸くする */
     transition: all 0.3s ease; /* アニメーション用のトランジション */
@@ -1311,12 +1333,16 @@ a{
     letter-spacing: 0.1em;
 }
 
+.header_tab{
+    display: grid;
+    cursor: pointer;
+}
 
 .header_tab span{
     display: block;
     width: 30px;
     height: 2px; /* 線の太さ */
-    margin: 5px 0;
+    margin: 3px 0;
     background-color: #1285c5; /* 線の色 */
     border-radius: 1px; /* 線の端を丸くする */
     transition: all 0.3s ease; /* アニメーション用のトランジション */
@@ -1882,13 +1908,6 @@ a{
     background-color: #f8f6ed;
     z-index: 1000; /* 前面に表示 */
     transition: all 0.3s ease-in-out;
-    /* &.fixed {
-        position: fixed;
-        top: 0;
-        + main {
-        padding-top: 100px;
-        }
-} */
 }
 .header_top.fixed{
     position: fixed;
@@ -1938,15 +1957,7 @@ a{
     display: none;
 }
 
-.header_tab span{
-    display: block;
-    width: 30px;
-    height: 2px; /* 線の太さ */
-    margin: 5px 0;
-    background-color: #1285c5; /* 線の色 */
-    border-radius: 1px; /* 線の端を丸くする */
-    transition: all 0.3s ease; /* アニメーション用のトランジション */
-}
+
 
 .header_menu{
     display: flex;
@@ -1961,6 +1972,7 @@ a{
 .header_nav{
     display: flex;
     align-items: center;
+    list-style: none;
 }
 .header_menuLink{
     padding-right: 2rem;
