@@ -107,6 +107,7 @@ a{
 }
 .header_menuLink{
     padding-right: 2rem;
+    list-style: none;
 }
 .header_text{
     font-size: 1.1rem;
@@ -1976,6 +1977,8 @@ a{
 }
 .header_menuLink{
     padding-right: 2rem;
+    list-style: none;
+
 }
 .header_text{
     font-size: 1.1rem;
