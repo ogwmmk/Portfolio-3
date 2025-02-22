@@ -895,13 +895,13 @@ a{
 
 
 /* hamburger_list p のアニメーション */
-.hamburger_list li {
+.hamburger_container {
     opacity: 0; /* 初期状態では非表示 */
-    transform: translateX(50%); /* 右から隠れている */
+    transform: translateX(20%); /* 右から隠れている */
     transition: opacity 1s ease, transform 2s ease; /* アニメーションを設定 */
 }
 
-.hamburger.active .hamburger_list li {
+.hamburger.active .hamburger_container {
     opacity: 1; /* メニューが開いたら表示 */
     transform: translateX(0); /* 右からスライドして出てくる */
 }
