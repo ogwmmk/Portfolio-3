@@ -1,20 +1,3 @@
-
-// const images = document.querySelectorAll(".mainVisual_image");
-// let index = 0;
-
-// function showNextImage() {
-//     images[index].style.opacity = 0; // 現在の画像を非表示
-//     index = (index + 1) % images.length; // 次の画像のインデックスを取得
-//     images[index].style.opacity = 1; // 次の画像を表示
-//     console.log(document.querySelectorAll(".mainVisual_image"));
-
-// }
-
-
-// setInterval(showNextImage, 5000); // 5秒ごとに画像を切り替え
-
-// 
-
 document.addEventListener("DOMContentLoaded", function () {
     const images = document.querySelectorAll(".mainVisual_image");
     let index = 0;
@@ -85,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let screenWidth = window.innerWidth; // 画面幅を取得
 
         // PC（835px以上）のときだけ overlap を適用
-        if (screenWidth > 835 && scrollY >= headerOffset - 50) { 
+        if (screenWidth > 835 && scrollY >= headerOffset - 50) {
             headerTitle.classList.add("overlap");
         } else {
             headerTitle.classList.remove("overlap");
@@ -96,4 +79,25 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleScroll); // 画面サイズ変更時も対応
 });
+
+
+
+// ハンバーガーメニュー
+document.addEventListener("DOMContentLoaded", function() {
+    const menuBtn = document.querySelector(".header_btn");
+    const hamburger = document.querySelector(".hamburger");
+
+    menuBtn.addEventListener("click", function() {
+        menuBtn.classList.toggle("active");
+        hamburger.classList.toggle("active");
+
+        // メニューが開いたらスクロールを無効にする
+        if (hamburger.classList.contains("active")) {
+            document.body.style.overflow = "hidden"; // スクロールを無効にする
+        } else {
+            document.body.style.overflow = "auto"; // スクロールを有効に戻す
+        }
+    });
+});
+
 
