@@ -64,7 +64,9 @@ a{
     border-top: none;
     height: 60px;
 }
-
+.hamburger{
+    display: none;
+}
 
 /* スクロール時にタイトルをヘッダー上に重ねる */
 .header_title.overlap {
@@ -92,7 +94,7 @@ a{
 }
 
 
-.header_tab{
+.header_btn{
     display: none;
 }
 
@@ -147,7 +149,7 @@ a{
     top: 10%;
     right: 1rem;
     writing-mode: vertical-rl;
-    z-index: 10000;
+    z-index: 1000;
 }
 .side_logo{
     font-size: 1.2rem;
@@ -729,10 +731,6 @@ a{
     background-color: #f8f6ed;
 }
 
-
-
-
-
 .header_title{
     position: fixed;
     top: 0;
@@ -757,17 +755,22 @@ a{
 }
 
 
-
 .headerTop_title{
     font-size: 2.4rem;
     letter-spacing: 0.1em;
 }
 
-.header_tab{
+/* ハンバーガーメニュー */
+.header_btn{
     display: grid;
     cursor: pointer;
+    position: relative; /* 追加 */
+    z-index: 1300; /* メニューより前面に */
+    border: none; /* ボーダーを削除 */
+    background-color: transparent; /* 背景色を透明に設定 */
 }
-.header_tab span{
+
+.header_btn span{
     display: block;
     width: 30px;
     height: 2px; /* 線の太さ */
@@ -777,6 +780,133 @@ a{
     transition: all 0.3s ease; /* アニメーション用のトランジション */
 }
 
+/* ナビゲーションメニュー */
+.hamburger {
+    display: grid;
+    position: fixed;
+    top: 0;
+    right: -400px; /* 初期状態では画面外 */
+    width: 95vw;
+    max-width: 400px;
+    height: 100vh;
+    color: #FFF;
+    background: #1285c5;
+    padding-top: 20px;
+    padding-left: 40px;
+    transition: 0.3s;
+    z-index: 1200; /* .header_title より前面に表示 */
+}
+.hamburger_title{
+    padding-bottom: 40px;
+    font-size: 2.4rem;
+    letter-spacing: 0.05em;
+}
+
+.hamburger_list{
+    list-style: none;
+    padding: 0;
+}
+
+.hamburger a {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+}
+.hamburger_list li {
+    padding-bottom: 20px;
+}
+.hamburger_list p {
+    width: 7em;
+    margin: 0; /* pの余白をリセット */
+    margin-right: 30px;
+    color: white;
+    font-size: 2.2rem;
+    letter-spacing: 0.05em;
+}
+.hamburger_list span{
+    display: inline-block;
+    position: relative;
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+    opacity: 0.9;
+}
+.hamburger_list span::before{
+    content: "";
+    display: block;
+    width: 1em;
+    height: 1px;
+    position: absolute;
+    left: -20px;
+    top: 48%;
+    background-color: #fff;
+    opacity: 0.9;
+}
+.sub{
+    margin-top: 20px;
+    padding-top: 40px;
+    border-top: 1px solid #fff;
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+    opacity: 0.5;
+}
+
+.sub li{
+    padding-bottom: 2rem;
+}
+
+.hamburger_sns{
+    display: flex;
+    padding-top: 20px;
+}
+
+.hamburger_snsImg{
+    width: 30px;
+    height: 30px;
+	cursor: pointer;
+}
+.hamburger_sns li{
+    padding-right: 20px;
+
+}
+
+/* メニューが開いたとき */
+.hamburger.active {
+    right: 0;
+    z-index: 1200; /* 開いた時に更に手前に持ってくる */
+}
+
+.header_btn.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.header_btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.header_btn.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+.header_btn.active span {
+    background-color: white; /* 白に変更して目立たせる */
+}
+
+
+
+/* hamburger_list p のアニメーション */
+.hamburger_list li {
+    opacity: 0; /* 初期状態では非表示 */
+    transform: translateX(50%); /* 右から隠れている */
+    transition: opacity 1s ease, transform 2s ease; /* アニメーションを設定 */
+}
+
+.hamburger.active .hamburger_list li {
+    opacity: 1; /* メニューが開いたら表示 */
+    transform: translateX(0); /* 右からスライドして出てくる */
+}
+
+/*  */
 .header_menu{
     display: none;
 }
@@ -788,7 +918,7 @@ a{
     top: 10%;
     right: 0;
     writing-mode: vertical-rl;
-    z-index: 10000;
+    z-index: 1000;
 }
 .side_logo{
     font-size: 1rem;
@@ -1329,17 +1459,33 @@ a{
     background-color: #f8f6ed;
 }
 
-.headerTop_title{
+.header_title{
+    position: fixed;
+    top: 0;
+    left: 3vw;
+    height: 60px;
     font-size: 2.4rem;
     letter-spacing: 0.1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    z-index: 1100; /* ヘッダーより前面に */
+    background-color: transparent; /* 初期状態では背景なし */
+    padding: 10px 20px;
 }
 
-.header_tab{
+/* ハンバーガーメニュー */
+.header_btn{
     display: grid;
     cursor: pointer;
+    position: relative; /* 追加 */
+    z-index: 1300; /* メニューより前面に */
+    border: none; /* ボーダーを削除 */
+    background-color: transparent; /* 背景色を透明に設定 */
 }
 
-.header_tab span{
+.header_btn span{
     display: block;
     width: 30px;
     height: 2px; /* 線の太さ */
@@ -1347,6 +1493,137 @@ a{
     background-color: #1285c5; /* 線の色 */
     border-radius: 1px; /* 線の端を丸くする */
     transition: all 0.3s ease; /* アニメーション用のトランジション */
+}
+
+/* ナビゲーションメニュー */
+.hamburger {
+    display: grid;
+    position: fixed;
+    top: 0;
+    right: -400px; /* 初期状態では画面外 */
+    width: 95vw;
+    max-width: 400px;
+    height: 100vh;
+    color: #FFF;
+    background: #1285c5;
+    padding-top: 20px;
+    padding-left: 40px;
+    transition: 0.3s;
+    z-index: 1200; /* .header_title より前面に表示 */
+}
+.hamburger_title{
+    padding-bottom: 40px;
+    font-size: 2.4rem;
+    letter-spacing: 0.05em;
+}
+
+.hamburger_list{
+    list-style: none;
+    padding: 0;
+}
+
+.hamburger a {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+}
+.hamburger_list li {
+    padding-bottom: 20px;
+}
+.hamburger_list p {
+    width: 7em;
+    margin: 0; /* pの余白をリセット */
+    margin-right: 30px;
+    color: white;
+    font-size: 2.2rem;
+    letter-spacing: 0.05em;
+}
+.hamburger_list span{
+    display: inline-block;
+    position: relative;
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+    opacity: 0.9;
+}
+.hamburger_list span::before{
+    content: "";
+    display: block;
+    width: 1em;
+    height: 1px;
+    position: absolute;
+    left: -20px;
+    top: 48%;
+    background-color: #fff;
+    opacity: 0.9;
+}
+.sub{
+    margin-top: 20px;
+    padding-top: 40px;
+    border-top: 1px solid #fff;
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+    opacity: 0.5;
+}
+
+.sub li{
+    padding-bottom: 2rem;
+}
+
+.hamburger_sns{
+    display: flex;
+    padding-top: 20px;
+}
+
+.hamburger_snsImg{
+    width: 30px;
+    height: 30px;
+	cursor: pointer;
+}
+.hamburger_sns li{
+    padding-right: 20px;
+
+}
+
+/* メニューが開いたとき */
+.hamburger.active {
+    right: 0;
+    z-index: 1200; /* 開いた時に更に手前に持ってくる */
+}
+
+.header_btn.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.header_btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.header_btn.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+.header_btn.active span {
+    background-color: white; /* 白に変更して目立たせる */
+}
+
+
+
+/* hamburger_list p のアニメーション */
+.hamburger_list li {
+    opacity: 0; /* 初期状態では非表示 */
+    transform: translateX(50%); /* 右から隠れている */
+    transition: opacity 1s ease, transform 2s ease; /* アニメーションを設定 */
+}
+
+.hamburger.active .hamburger_list li {
+    opacity: 1; /* メニューが開いたら表示 */
+    transform: translateX(0); /* 右からスライドして出てくる */
+}
+
+/*  */
+.header_menu{
+    display: none;
 }
 /* main */
 
@@ -1356,7 +1633,7 @@ a{
     top: 10%;
     right: 0;
     writing-mode: vertical-rl;
-    z-index: 10000;
+    z-index: 1000;
 }
 .side_logo{
     font-size: 1rem;
@@ -1917,7 +2194,9 @@ a{
     border-top: none;
     height: 60px;
 }
-
+.hamburger{
+    display: none;
+}
 
 /* スクロール時にタイトルをヘッダー上に重ねる */
 .header_title.overlap {
@@ -1954,11 +2233,9 @@ a{
     letter-spacing: 0.1em;
 } */
 
-.header_tab{
+.header_btn{
     display: none;
 }
-
-
 
 .header_menu{
     display: flex;
@@ -2018,7 +2295,7 @@ a{
     top: 15%;
     right: 1rem;
     writing-mode: vertical-rl;
-    z-index: 10000;
+    z-index: 1000;
 }
 .side_logo{
     font-size: 1.2rem;
