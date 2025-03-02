@@ -211,6 +211,8 @@ a{
 
 
 .main_inner{
+    display: grid;
+    align-items: center;
     height: 100vh;
     padding-top: 5rem;
     padding-bottom: 16rem;
@@ -970,6 +972,9 @@ a{
     display: block;
 }
 .main_inner{
+    display: grid;
+    align-items: center;
+    height: auto;
     padding-top: 5rem;
     padding-bottom: 8rem;
     padding-left: 5vw;
@@ -989,7 +994,7 @@ a{
 
 .mainSection_title{
     padding-bottom: 30px;
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     font-weight: bold;
     line-height: 1.8;
     letter-spacing: 0.05em;
@@ -1680,6 +1685,9 @@ a{
 
 /* mainSection */
 .main_inner{
+    display: grid;
+    align-items: center;
+    height: auto;
     padding-top: 5rem;
     padding-bottom: 8rem;
     padding-left: 5vw;
@@ -2379,6 +2387,8 @@ a{
 
 
 .main_inner{
+    display: grid;
+    align-items: center;
     height: 100vh;
     padding-top: 5rem;
     padding-bottom: 16rem;
@@ -2402,7 +2412,7 @@ a{
 
 .mainSection_title{
     padding-bottom: 50px;
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: bold;
     line-height: 1.8;
     letter-spacing: 0.05em;
