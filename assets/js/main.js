@@ -101,3 +101,119 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+document.addEventListener("DOMContentLoaded", () => {
+    const target = document.querySelector(".mainVisual_inner");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          target.classList.add("show-border");
+        }
+      });
+    }, { threshold: 0.5 }); // 50% 見えたら発火
+
+    observer.observe(target);
+  });
+
+
+//   const headerTop = document.querySelector('.header_top');
+
+// window.onload = () => {
+//   headerTop.classList.add('active');
+// };
+
+const headerTop = document.querySelector('.header_top');
+const menu = document.querySelector('.menu');
+const news = document.querySelector('.news');
+
+// /下記をまとめたもの　いらないかも 
+// window.onload = () => {
+//   headerTop.classList.add('active');
+//   menu.classList.add('active');
+//   news.classList.add('active');
+
+
+// };
+// window.onload = () => {
+//     const userInners = document.querySelectorAll('.user_inner');
+//     userInners.forEach((inner, index) => {
+//       if (index === 0 || index === 1) { // 1個目と2個目だけ
+//         inner.classList.add('active');
+//       }
+//     });
+//   };
+  
+
+
+
+//   window.onload = () => {
+//     // header_top、menu、news に active を付ける
+//     document.querySelector('.header_top')?.classList.add('active');
+//     document.querySelector('.menu')?.classList.add('active');
+//     document.querySelector('.news')?.classList.add('active');
+  
+//     // user_inner の1個目と2個目に active
+//     const userInners = document.querySelectorAll('.user_inner');
+//     userInners.forEach((inner, index) => {
+//       if (index === 0 || index === 1) {
+//         inner.classList.add('active');
+//       }
+//     });
+  
+//     // menuSection の1個目～3個目に active
+//     const menuSections = document.querySelectorAll('.menuSection');
+//     menuSections.forEach((section, index) => {
+//       if (index === 0 || index === 1 || index === 2) {
+//         section.classList.add('active');
+//       }
+//     });
+//   };
+  
+  window.onload = () => {
+    // これまでの header_top、menu、news、user_inner、menuSection のactive設定
+    document.querySelector('.header_top')?.classList.add('active');
+    document.querySelector('.menu')?.classList.add('active');
+    document.querySelector('.news')?.classList.add('active');
+  
+    const userInners = document.querySelectorAll('.user_inner');
+    userInners.forEach((inner, index) => {
+      if (index === 0 || index === 1) {
+        inner.classList.add('active');
+      }
+    });
+  
+    const menuSections = document.querySelectorAll('.menuSection');
+    menuSections.forEach((section, index) => {
+      if (index === 0 || index === 1 || index === 2) {
+        section.classList.add('active');
+      }
+    });
+  
+    // ★ここから今回追加するやつ★
+    const mainSectionVisuals = document.querySelectorAll('.mainSection_visual');
+    if (mainSectionVisuals[0]) {
+      mainSectionVisuals[0].classList.add('active');
+    }
+  
+    const mainInners = document.querySelectorAll('.main_inner');
+    if (mainInners[1]) {
+      mainInners[1].classList.add('active');
+    }
+  };
+  
+
+  
+
+window.onload = () => {
+    const elements = [
+      document.querySelectorAll('.mainSection_visual')[1], // 2番目のmainSection_visual
+      document.querySelectorAll('.main_inner')[2]           // 3番目のmain_inner
+    ];
+  
+    elements.forEach(el => {
+      if (el) {
+        el.classList.add('active');
+      }
+    });
+  };
+  
