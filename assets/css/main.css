@@ -2187,11 +2187,14 @@ a{
     width: 100%;
     height: 80px;
     padding: 0 15px;
-    border-top: 1px solid #1285c5;
-    border-bottom: 1px solid #1285c5;
+    /* border-top: 1px solid #1285c5; */
+    /* border-bottom: 1px solid #1285c5; */
     background-color: #f8f6ed;
     z-index: 1000; /* 前面に表示 */
     transition: all 0.3s ease-in-out;
+
+    overflow: hidden; /* 擬似要素がはみ出ないように */
+    position: relative; /* 擬似要素の基準にする */
 }
 .header_top.fixed{
     position: fixed;
@@ -2199,6 +2202,38 @@ a{
     left: 0;
     border-top: none;
     height: 60px;
+}
+
+
+.header_top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    width: 100%;
+    height: 1px;
+    background-color: #1285c5;
+    transition: transform 2s ease;
+}
+.header_top::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    width: 100%;
+    height: 1px;
+    background-color: #1285c5;
+    transition: transform 2s ease;
+}
+
+/* アクティブになったら両方広げる */
+.header_top.active::before,
+.header_top.active::after {
+    transform: translateX(-50%) scaleX(1);
 }
 .hamburger{
     display: none;
@@ -2223,8 +2258,6 @@ a{
     font-size: 2rem; /* 小さくして一体化 */
     left: 15px;
 }
-
-
 
 .header_logo{
     position: sticky;
@@ -2289,9 +2322,7 @@ a{
     height: 18px;
 }
 
-
 /* main */
-
 
 .side{
     display: flex;
@@ -2311,7 +2342,7 @@ a{
     display: flex;
     width: 100%;
     height: calc(100vh - 80px);
-    border-bottom: 1px solid #1285c5;
+    /* border-bottom: 1px solid #1285c5; */
 }
 
 .mainVisual_inner{
@@ -2320,8 +2351,42 @@ a{
     flex-direction: column;
     justify-content: center;
     padding-left: 5vw;
-    border-right: 1px solid #1285c5;
+    /* border-right: 1px solid #1285c5; */
 }
+
+.mainVisual_inner {
+    position: relative;
+    /* display: inline-block; */
+    /* padding: 20px; */
+    border: 1px solid transparent;
+    /* 枠線を透明にしておく */
+    box-sizing: border-box; /* ボーダー込みのサイズ調整 */
+    overflow: hidden;
+
+}
+
+
+.mainVisual_inner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 0%;
+    background-color: #1285c5;
+    animation: lineExpandVertical 2s ease-out forwards;
+}
+
+@keyframes lineExpandVertical {
+    0% {
+        height: 0%;
+    }
+
+    100% {
+        height: 100%;
+    }
+}
+
 .header_title{
     position: fixed;
     top: 0;
@@ -2384,7 +2449,6 @@ a{
     grid-template-columns: repeat(2, 1fr); /* 2カラムに分割 */
     grid-template-rows: repeat(2, auto); /* 行を2つに分割 */
 }
-
 
 .main_inner{
     display: grid;
@@ -2465,17 +2529,59 @@ a{
     padding: 5%;
     border-bottom: 1px solid #1285c5;
 }
+
 .mainSection_image{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
+.mainSection_visual,
+.main_inner {
+  position: relative;
+  overflow: hidden;
+}
+
+/* 2番目の.mainSection_visualに右ボーダー */
+.main_container > .mainSection_visual:nth-of-type(2)::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #1285c5;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 2s ease;
+}
+
+/* 3番目の.main_innerに右ボーダー */
+.main_container > .main_inner:nth-of-type(3)::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #1285c5;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 2s ease;
+}
+
+/* activeクラスが付いたら伸びる */
+.mainSection_visual.active::after,
+.main_inner.active::after {
+  transform: scaleY(1);
+}
+
+
 
 /* CSSで順番を変更 */
 .mainSection_visual:nth-child(2) {
     order: 1; /* 最初に表示 */
-    border-right: 1px solid #1285c5;
+    /* border-right: 1px solid #1285c5; */
 
 }
 
@@ -2485,7 +2591,7 @@ a{
 
 .main_inner:nth-child(3) {
     order: 3; /* 3番目に表示 */
-    border-right: 1px solid #1285c5;
+    /* border-right: 1px solid #1285c5; */
 
 }
 
@@ -2496,17 +2602,70 @@ a{
 /* menuSection */
 .menu{
     display: flex;
-    border-bottom: 1px solid #1285c5;
+    /* border-bottom: 1px solid #1285c5; */
+    position: relative; /* 擬似要素のため必要 */
+    overflow: hidden; /* 擬似要素がはみ出さないように */
+}
+.menu::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    width: 100%;
+    height: 1px;
+    background-color: #1285c5;
+    transition: transform 2s ease; /* ← ゆっくり */
+}
+.menu::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    width: 100%;
+    height: 1px;
+    background-color: #1285c5;
+    transition: transform 2s ease; /* ← ゆっくり */
+}
+
+/* アクティブになったら伸びる */
+.menu.active::after,
+.menu.active::before {
+    transform: translateX(-50%) scaleX(1);
 }
 
 .menuSection{
     width: 100%;
     padding: 2vw;
+    position: relative;
+    overflow: hidden;
+}
+.menuSection:nth-of-type(1)::before,
+.menuSection:nth-of-type(2)::before,
+.menuSection:nth-of-type(3)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #1285c5;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 2s ease;
 }
 
-.menuSection:not(:last-of-type) {
-    border-right: 1px solid #1285c5;
+/* activeになったら伸びる */
+.menuSection.active::before {
+  transform: scaleY(1);
 }
+
+/* .menuSection:not(:last-of-type) {
+    border-right: 1px solid #1285c5;
+} */
 
 .menuSection_visualLink{
     cursor: pointer; /* カーソルをポインタに */
@@ -2521,6 +2680,8 @@ a{
     height: auto;
     overflow: hidden; /* はみ出た部分を隠す */
 }
+
+
 
 .menuSection_image{
     width: 100%;
@@ -2598,7 +2759,26 @@ a{
     padding: 80px 0;
     padding-left: 5vw;
     padding-right: 5vw;
-    border-bottom: 1px solid #1285c5;
+    /* border-bottom: 1px solid #1285c5; */
+    position: relative; /* 擬似要素のため必要 */
+    overflow: hidden; /* 擬似要素がはみ出さないように */
+}
+.news::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    width: 100%;
+    height: 1px;
+    background-color: #1285c5;
+    transition: transform 2s ease; /* ← ゆっくり */
+}
+
+/* アクティブになったら伸びる */
+.news.active::after {
+    transform: translateX(-50%) scaleX(1);
 }
 
 .news_title{
@@ -2657,11 +2837,31 @@ a{
 }
 .user_inner{
     flex: 1; /* 各アイテムを均等に分割 */
+    position: relative; /* 擬似要素の基準にする */
+    overflow: hidden;
 
 }
-.user_inner:not(:last-of-type) {
-    border-right: 1px solid #1285c5;
+.user_inner:nth-of-type(1)::after,
+.user_inner:nth-of-type(2)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background-color: #1285c5;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 2s ease; /* ゆっくり伸びる */
 }
+
+/* activeクラスがついたら伸びる */
+.user_inner.active::after {
+    transform: scaleY(1);
+}
+/* .user_inner:not(:last-of-type) {
+    border-right: 1px solid #1285c5;
+} */
 
 /* map */
 
@@ -2896,6 +3096,9 @@ a{
 }
 
 }
+
+/* line */
+
 
 
 
