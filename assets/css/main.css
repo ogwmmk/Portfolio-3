@@ -1005,6 +1005,11 @@ a{
     /* border-bottom: 1px solid #1285c5; */
 }
 
+.main_inner.line-right::after {
+    display: none !important;
+}
+
+
 .mainSection_subTitle{
     padding-bottom: 50px;
     font-size: 1.8rem;
@@ -1226,7 +1231,9 @@ a{
     letter-spacing: 0.05em;
     position: relative;
 }
-
+.news.line-top::before {
+    display: none !important;
+}
 
 
 /* user */
@@ -1890,10 +1897,14 @@ a{
 /* news */
 
 .news{
+    display: grid;
     padding: 6rem;
     padding-left: 5vw;
     padding-right: 5vw;
 }
+/* .news.line-top::before {
+    position: relative;
+} */
 
 .news_title{
     padding-bottom: 30px;
@@ -2093,10 +2104,6 @@ a{
     letter-spacing: 0.05em;
 }
 
-.info{
-
-
-}
 .Contact_inner{
     padding-bottom: 3rem;
 }
@@ -2332,8 +2339,6 @@ a{
 }
 
 
-
-
 .mainVisual_inner::after {
     content: "";
     position: absolute;
@@ -2526,7 +2531,6 @@ a{
     overflow: hidden;
 }
 
-
 /* menuSection */
 .menu{
     display: flex;
@@ -2534,7 +2538,6 @@ a{
     position: relative; /* 擬似要素のため必要 */
     overflow: hidden; /* 擬似要素がはみ出さないように */
 }
-
 
 .menuSection{
     width: 100%;
@@ -2560,8 +2563,6 @@ a{
     height: auto;
     overflow: hidden; /* はみ出た部分を隠す */
 }
-
-
 
 .menuSection_image{
     width: 100%;
