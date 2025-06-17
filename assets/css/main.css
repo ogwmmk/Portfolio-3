@@ -2749,6 +2749,10 @@ a{
     overflow-wrap: break-word; /* 同じ意味 */
 }
 
+.map.line-bottom::after {
+    display: none !important;
+}
+
 .map_title{
     padding-bottom: 50px;
     font-size: 2rem;
@@ -2766,6 +2770,7 @@ a{
     letter-spacing: 0.05em;
     line-height: 2;
 }
+
 
 /* blog */
 .blog{
