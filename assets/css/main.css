@@ -1230,6 +1230,7 @@ a{
     font-weight: bold;
     letter-spacing: 0.05em;
     position: relative;
+    padding-bottom: 10px;
 }
 .news.line-top::before {
     display: none !important;
@@ -1322,7 +1323,7 @@ a{
 
 .blog_title{
     display: inline-block;
-    padding-bottom: 3rem;
+    padding-bottom: 5px;
     font-size: 1.3rem;
     font-weight: bold;
     letter-spacing: 0.05em;
@@ -2282,6 +2283,7 @@ a{
     letter-spacing: 0.05em;
     font-weight: bold;
 }
+
 .header_reserve{
     text-align: center;
     padding: 12px 22px;
