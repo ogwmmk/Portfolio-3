@@ -104,7 +104,9 @@ a{
     list-style: none;
 }
 .header_menuLink{
-    padding-right: 2rem;
+    display: flex;
+    justify-content: center;
+    width: 8rem;
     list-style: none;
 }
 .header_text{
@@ -112,7 +114,19 @@ a{
     letter-spacing: 0.05em;
     font-weight: bold;
 }
+.header_text .jp {
+    display: none;
+}
+
+.header_text:hover .en {
+    display: none;
+}
+
+.header_text:hover .jp {
+    display: inline;
+}
 .header_reserve{
+    width: 10rem;
     text-align: center;
     padding: 12px 22px;
     background-color: #fff;
@@ -125,10 +139,10 @@ a{
 
 .headerSns{
     display: flex;
-    padding-left: 4rem;
+    margin-left: 4rem;
 }
 .headerSns_logo{
-    padding-right: 1.6rem;
+    margin-right: 1.6rem;
 }
 .headerSns_image{
     width: 18px;
@@ -261,7 +275,7 @@ a{
 }
 
 .mainSection_title{
-    padding-bottom: 50px;
+    margin-bottom: 50px;
     font-size: 2rem;
     font-weight: bold;
     line-height: 1.8;
@@ -275,7 +289,7 @@ a{
 }
 
 .mainSection_link{
-    padding-top: 60px;
+    margin-top: 60px;
 }
 
 .mainSection_btn{
@@ -370,14 +384,14 @@ a{
 }
 
 .menuSection_title{
-    padding-bottom: 20px;
+    margin-bottom: 20px;
     font-size: 1.3rem;
     font-weight: bold;
     letter-spacing: 0.05em;
 
 }
 .menuSection_subTitle{
-    padding-bottom: 30px;
+    margin-bottom: 30px;
     font-size: 2.1rem;
     font-weight: bold;
     line-height: 1.8;
@@ -392,7 +406,7 @@ a{
 }
 
 .menuSection_link{
-    padding-top: 60px;
+    margin-top: 60px;
 }
 
 .menuSection_btn{
@@ -460,13 +474,13 @@ a{
     background-repeat: no-repeat;
 }
 .news_day{
-    padding-bottom: 18px;
+    margin-bottom: 18px;
     font-size: 1.2rem;
     letter-spacing: 0.05em;
 }
 
 .news_text{
-    padding-right: 50px;
+    margin-right: 50px;
     font-size: 1.4rem;
     font-weight: bold;
     letter-spacing: 0.05em;
@@ -496,7 +510,7 @@ a{
 }
 
 .map_title{
-    padding-bottom: 50px;
+    margin-bottom: 50px;
     font-size: 2rem;
     font-weight: bold;
     letter-spacing: 0.05em;
@@ -506,7 +520,7 @@ a{
 }
 
 .map_text{
-    padding-bottom: 2rem;
+    margin-bottom: 2rem;
     font-size: 1.3rem;
     font-weight: bold;
     letter-spacing: 0.05em;
@@ -546,7 +560,7 @@ a{
 }
 
 .blog_number{
-    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
     font-size: 1rem;
     font-weight: bold;
     letter-spacing: 0.05em;
@@ -554,7 +568,7 @@ a{
 
 .blog_title{
     display: inline-block;
-    padding-bottom: 3rem;
+    margin-bottom: 3rem;
     font-size: 1.6rem;
     font-weight: bold;
     letter-spacing: 0.05em;
@@ -563,7 +577,7 @@ a{
     border-bottom: 1px dashed transparent;
 }
 .blog_link{
-    padding-top: 2rem;
+    margin-top: 2rem;
 }
 
 .blog_text{
@@ -604,33 +618,29 @@ a{
 }
 
 .footer_title{
-    padding-bottom: 4rem;
+    margin-bottom: 4rem;
     color: #FFF;
     font-size: 3rem;
     font-weight: bold;
     letter-spacing: 0.1em;
 }
 .access{
-    padding-bottom: 3rem;
-
-
+    margin-bottom: 3rem;
 }
 .access_title{
-    padding-bottom: 3rem;
+    margin-bottom: 3rem;
     font-size: 1.6rem;
     letter-spacing: 0.1em;
 }
 .access_address{
-    padding-bottom: 3rem;
+    margin-bottom: 3rem;
     font-size: 1.3rem;
     letter-spacing: 0.05em;
 }
 
 .access_data{
     display: flex;
-    padding-bottom: 1rem;
-
-
+    margin-bottom: 1rem;
 }
 .access_term{
     font-size: 1.3rem;
@@ -664,7 +674,7 @@ a{
     cursor: pointer;
 }
 .info_title{
-    padding-bottom: 1rem;
+    margin-bottom: 1rem;
     font-size: 1.6rem;
     letter-spacing: 0.1em;
 }
@@ -701,7 +711,7 @@ a{
     margin-top: -50px;
 }
 .sns_logo{
-    padding-right: 20px;
+    margin-right: 20px;
 }
 .sns_image{
     width: 20px;
@@ -709,7 +719,7 @@ a{
 	cursor: pointer;
 }
 .copyright{
-    padding-top: 2rem;
+    margin-top: 2rem;
 }
 .copyright_text{
     font-size: 1rem;
@@ -828,7 +838,7 @@ a{
     font-size: 12px;
 }
 .hamburger_list li {
-    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 .hamburger_list p {
     width: 7em;
@@ -866,7 +876,7 @@ a{
 }
 
 .sub li{
-    padding-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 .hamburger_sns{
@@ -880,7 +890,7 @@ a{
 	cursor: pointer;
 }
 .hamburger_sns li{
-    padding-right: 20px;
+    margin-right: 20px;
 
 }
 
@@ -1021,7 +1031,7 @@ a{
 }
 
 .mainSection_title{
-    padding-bottom: 30px;
+    margin-bottom: 30px;
     font-size: 1.9rem;
     font-weight: bold;
     line-height: 1.8;
@@ -1035,7 +1045,7 @@ a{
 }
 
 .mainSection_link{
-    padding-top: 60px;
+    margin-top: 60px;
 }
 
 .mainSection_btn{
@@ -1129,14 +1139,14 @@ a{
 }
 
 .menuSection_title{
-    padding-bottom: 20px;
+    margin-bottom: 20px;
     font-size: 1.3rem;
     font-weight: bold;
     letter-spacing: 0.05em;
 
 }
 .menuSection_subTitle{
-    padding-bottom: 30px;
+    margin-bottom: 30px;
     font-size: 2.1rem;
     font-weight: bold;
     line-height: 1.8;
@@ -1151,7 +1161,7 @@ a{
 }
 
 .menuSection_link{
-    padding-top: 60px;
+    margin-top: 60px;
 }
 
 .menuSection_btn{
@@ -1220,17 +1230,17 @@ a{
 }
 
 .news_day{
-    padding-bottom: 20px;
+    margin-bottom: 20px;
     font-size: 1.2rem;
     letter-spacing: 0.05em;
 }
 
 .news_text{
+    position: relative;
+    margin-bottom: 10px;
     font-size: 1.4rem;
     font-weight: bold;
     letter-spacing: 0.05em;
-    position: relative;
-    padding-bottom: 10px;
 }
 .news.line-top::before {
     display: none !important;
@@ -1266,7 +1276,7 @@ a{
 }
 
 .map_title{
-    padding-bottom: 40px;
+    margin-bottom: 40px;
     font-size: 1.6rem;
     font-weight: bold;
     letter-spacing: 0.05em;
@@ -1274,7 +1284,6 @@ a{
 
 .map_text{
     font-size: 1.3rem;
-    /* font-weight: bold; */
     letter-spacing: 0.05em;
     line-height: 1.6;
 }
@@ -1315,7 +1324,7 @@ a{
 }
 
 .blog_number{
-    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
     font-size: 1rem;
     font-weight: bold;
     letter-spacing: 0.05em;
@@ -1323,7 +1332,7 @@ a{
 
 .blog_title{
     display: inline-block;
-    padding-bottom: 5px;
+    margin-bottom: 5px;
     font-size: 1.3rem;
     font-weight: bold;
     letter-spacing: 0.05em;
@@ -1333,7 +1342,7 @@ a{
 }
 
 .blog_link{
-    padding-top: 2rem;
+    margin-top: 2rem;
 }
 
 .blog_text{
@@ -1367,29 +1376,29 @@ a{
     display: block;
 }
 .footer_title{
-    padding-bottom: 4rem;
+    margin-bottom: 4rem;
     font-size: 2.2rem;
     /* font-weight: bold; */
     letter-spacing: 0.1em;
 }
 .access{
-    padding-top: 5rem;
-    padding-bottom: 3rem;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
 }
 .access_title{
-    padding-bottom: 1.4rem;
+    margin-bottom: 1.4rem;
     font-size: 1.4rem;
     letter-spacing: 0.1em;
 }
 .access_address{
-    padding-bottom: 1.6rem;
+    margin-bottom: 1.6rem;
     font-size: 1.2rem;
     letter-spacing: 0.05em;
 }
 
 .access_data{
     display: flex;
-    padding-bottom: 1rem;
+    margin-bottom: 1rem;
 
 
 }
@@ -1419,7 +1428,7 @@ a{
     cursor: pointer;
 }
 .info_title{
-    padding-bottom: 1rem;
+    margin-bottom: 1rem;
     font-size: 1.4rem;
     letter-spacing: 0.1em;
 }
@@ -1456,7 +1465,7 @@ a{
     margin: 0;
 }
 .sns_logo{
-    padding-right: 20px;
+    margin-right: 20px;
 }
 .sns_image{
     width: 20px;
@@ -1558,7 +1567,7 @@ a{
     font-size: 12px;
 }
 .hamburger_list li {
-    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 .hamburger_list p {
     width: 7em;
@@ -1596,7 +1605,7 @@ a{
 }
 
 .sub li{
-    padding-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 .hamburger_sns{
@@ -1610,7 +1619,7 @@ a{
 	cursor: pointer;
 }
 .hamburger_sns li{
-    padding-right: 20px;
+    margin-right: 20px;
 
 }
 
@@ -1730,7 +1739,7 @@ a{
 }
 
 .mainSection_title{
-    padding-bottom: 30px;
+    margin-bottom: 30px;
     font-size: 1.8rem;
     font-weight: bold;
     line-height: 1.8;
@@ -1744,7 +1753,7 @@ a{
 }
 
 .mainSection_link{
-    padding-top: 60px;
+    margin-top: 60px;
 }
 
 .mainSection_btn{
@@ -1840,14 +1849,14 @@ a{
 
 
 .menuSection_title{
-    padding-bottom: 20px;
+    margin-bottom: 20px;
     font-size: 1.3rem;
     font-weight: bold;
     letter-spacing: 0.05em;
 
 }
 .menuSection_subTitle{
-    padding-bottom: 30px;
+    margin-bottom: 30px;
     font-size: 1.6rem;
     font-weight: bold;
     line-height: 1.8;
@@ -1862,7 +1871,7 @@ a{
 }
 
 .menuSection_link{
-    padding-top: 60px;
+    margin-top: 60px;
 }
 
 .menuSection_btn{
@@ -1932,13 +1941,13 @@ a{
 }
 
 .news_day{
-    padding-bottom: 10px;
+    margin-bottom: 10px;
     font-size: 1.2rem;
     letter-spacing: 0.05em;
 }
 
 .news_text{
-    padding-right: 50px;
+    margin-right: 50px;
     font-size: 1.4rem;
     font-weight: bold;
     letter-spacing: 0.05em;
@@ -1973,7 +1982,7 @@ a{
 }
 
 .map_title{
-    padding-bottom: 30px;
+    margin-bottom: 30px;
     font-size: 1.6rem;
     font-weight: bold;
     letter-spacing: 0.05em;
@@ -1981,7 +1990,6 @@ a{
 
 .map_text{
     font-size: 1.3rem;
-    /* font-weight: bold; */
     letter-spacing: 0.05em;
     line-height: 1.6;
 }
@@ -2021,7 +2029,7 @@ a{
 }
 
 .blog_number{
-    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
     font-size: 1rem;
     font-weight: bold;
     letter-spacing: 0.05em;
@@ -2029,7 +2037,7 @@ a{
 
 .blog_title{
     display: inline-block;
-    padding-bottom: 3rem;
+    margin-bottom: 3rem;
     font-size: 1.3rem;
     font-weight: bold;
     letter-spacing: 0.05em;
@@ -2038,7 +2046,7 @@ a{
     border-bottom: 1px dashed transparent;
 }
 .blog_link{
-    padding-top: 2rem;
+    margin-top: 2rem;
 }
 
 .blog_text{
@@ -2070,30 +2078,28 @@ a{
 
 }
 .footer_title{
-    padding-bottom: 4rem;
+    margin-bottom: 4rem;
     font-size: 2.2rem;
     /* font-weight: bold; */
     letter-spacing: 0.1em;
 }
 .access{
-    padding-bottom: 3rem;
+    margin-bottom: 3rem;
 }
 .access_title{
-    padding-bottom: 1.4rem;
+    margin-bottom: 1.4rem;
     font-size: 1.4rem;
     letter-spacing: 0.1em;
 }
 .access_address{
-    padding-bottom: 1.6rem;
+    margin-bottom: 1.6rem;
     font-size: 1.2rem;
     letter-spacing: 0.05em;
 }
 
 .access_data{
     display: flex;
-    padding-bottom: 1rem;
-
-
+    margin-bottom: 1rem;
 }
 .access_term{
     font-size: 1.2rem;
@@ -2121,7 +2127,7 @@ a{
     cursor: pointer;
 }
 .info_title{
-    padding-bottom: 1rem;
+    margin-bottom: 1rem;
     font-size: 1.4rem;
     letter-spacing: 0.1em;
 }
@@ -2157,7 +2163,7 @@ a{
     display: flex;
 }
 .sns_logo{
-    padding-right: 20px;
+    margin-right: 20px;
 }
 .sns_image{
     width: 20px;
@@ -2274,18 +2280,32 @@ a{
     list-style: none;
 }
 .header_menuLink{
-    padding-right: 2rem;
+    display: flex;
+    justify-content: center;
+    width: 8rem;
     list-style: none;
-
 }
+
 .header_text{
     font-size: 1.1rem;
     letter-spacing: 0.05em;
     font-weight: bold;
 }
+.header_text .jp {
+    display: none;
+}
 
+.header_text:hover .en {
+    display: none;
+}
+
+.header_text:hover .jp {
+    display: inline;
+}
 .header_reserve{
+    width: 10rem;
     text-align: center;
+    margin-left: 2rem;
     padding: 12px 22px;
     background-color: #fff;
     border: 1px solid #1285c5;
@@ -2297,10 +2317,10 @@ a{
 
 .headerSns{
     display: flex;
-    padding-left: 4rem;
+    margin-left: 4rem;
 }
 .headerSns_logo{
-    padding-right: 1.6rem;
+    margin-right: 1.6rem;
 }
 .headerSns_image{
     width: 18px;
@@ -2457,7 +2477,7 @@ a{
 }
 
 .mainSection_title{
-    padding-bottom: 50px;
+    margin-bottom: 50px;
     font-size: 2.2rem;
     font-weight: bold;
     line-height: 1.8;
@@ -2471,7 +2491,7 @@ a{
 }
 
 .mainSection_link{
-    padding-top: 60px;
+    margin-top: 60px;
 }
 
 .mainSection_btn{
@@ -2536,7 +2556,6 @@ a{
 /* menuSection */
 .menu{
     display: flex;
-    /* border-bottom: 1px solid #1285c5; */
     position: relative; /* 擬似要素のため必要 */
     overflow: hidden; /* 擬似要素がはみ出さないように */
 }
@@ -2547,10 +2566,6 @@ a{
     position: relative;
     overflow: hidden;
 }
-
-/* .menuSection:not(:last-of-type) {
-    border-right: 1px solid #1285c5;
-} */
 
 .menuSection_visualLink{
     cursor: pointer; /* カーソルをポインタに */
@@ -2579,14 +2594,14 @@ a{
 }
 
 .menuSection_title{
-    padding-bottom: 20px;
+    margin-bottom: 20px;
     font-size: 1.4rem;
     font-weight: bold;
     letter-spacing: 0.05em;
 
 }
 .menuSection_subTitle{
-    padding-bottom: 30px;
+    margin-bottom: 30px;
     font-size: 2rem;
     font-weight: bold;
     line-height: 1.8;
@@ -2601,7 +2616,7 @@ a{
 }
 
 .menuSection_link{
-    padding-top: 60px;
+    margin-top: 60px;
 }
 
 .menuSection_btn{
@@ -2695,15 +2710,14 @@ a{
 
 }
 .news_day{
-    padding-bottom: 18px;
+    margin-bottom: 18px;
     font-size: 1.2rem;
     letter-spacing: 0.05em;
 }
 
 .news_text{
     display: inline-block;
-    padding-bottom: 0.4rem;
-    /* padding-right: 50px; */
+    margin-bottom: 0.4rem;
     font-size: 1.4rem;
     font-weight: bold;
     letter-spacing: 0.05em;
@@ -2756,7 +2770,7 @@ a{
 }
 
 .map_title{
-    padding-bottom: 50px;
+    margin-bottom: 50px;
     font-size: 2rem;
     font-weight: bold;
     letter-spacing: 0.05em;
@@ -2766,7 +2780,7 @@ a{
 }
 
 .map_text{
-    padding-bottom: 2rem;
+    margin-bottom: 2rem;
     font-size: 1.3rem;
     font-weight: bold;
     letter-spacing: 0.05em;
@@ -2807,7 +2821,7 @@ a{
 }
 
 .blog_number{
-    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
     font-size: 1rem;
     font-weight: bold;
     letter-spacing: 0.05em;
@@ -2817,7 +2831,7 @@ a{
 }
 .blog_title{
     display: inline-block;
-    padding-bottom: 0.4rem;
+    margin-bottom: 0.4rem;
     font-size: 1.8rem;
     font-weight: bold;
     letter-spacing: 0.05em;
@@ -2826,7 +2840,7 @@ a{
     border-bottom: 1px dashed transparent;
 }
 .blog_link{
-    padding-top: 2rem;
+    margin-top: 2rem;
 }
 .blog_text{
     position: relative;
@@ -2865,31 +2879,29 @@ a{
 }
 
 .footer_title{
-    padding-bottom: 4rem;
+    margin-bottom: 4rem;
     color: #FFF;
     font-size: 3rem;
     font-weight: bold;
     letter-spacing: 0.1em;
 }
 .access{
-    padding-bottom: 3rem;
-
-
+    margin-bottom: 3rem;
 }
 .access_title{
-    padding-bottom: 3rem;
+    margin-bottom: 3rem;
     font-size: 1.8rem;
     letter-spacing: 0.1em;
 }
 .access_address{
-    padding-bottom: 3rem;
+    margin-bottom: 3rem;
     font-size: 1.3rem;
     letter-spacing: 0.05em;
 }
 
 .access_data{
     display: flex;
-    padding-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 .access_term{
     font-size: 1.3rem;
@@ -2901,13 +2913,8 @@ a{
     letter-spacing: 0.05em;
 }
 
-.info{
-
-
-}
-
 .Contact_inner{
-    padding-bottom: 3rem;
+    margin-bottom: 3rem;
 }
 
 .info_inner{
@@ -2923,7 +2930,7 @@ a{
     cursor: pointer;
 }
 .info_title{
-    padding-bottom: 1rem;
+    margin-bottom: 1rem;
     font-size: 1.8rem;
     letter-spacing: 0.1em;
 }
@@ -2962,17 +2969,16 @@ a{
     margin-top: -50px;
 }
 .sns_logo{
-    padding-right: 20px;
+    margin-right: 20px;
 }
-.sns_link{
-}
+
 .sns_image{
     width: 20px;
     height: 20px;
     cursor: pointer;
 }
 .copyright{
-    padding-top: 2rem;
+    margin-top: 2rem;
 }
 .copyright_text{
     font-size: 1rem;
