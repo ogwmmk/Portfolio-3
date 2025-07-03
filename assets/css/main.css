@@ -109,21 +109,38 @@ a{
     width: 8rem;
     list-style: none;
 }
-.header_text{
+.header_text {
+    position: relative;
     font-size: 1.1rem;
     letter-spacing: 0.05em;
     font-weight: bold;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    height: 1.5em; /* 高さを安定させる */
+    overflow: hidden;
 }
+
+.header_text .en,
 .header_text .jp {
-    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: opacity 0.2s ease-in-out;
+    white-space: nowrap;
+}
+
+.header_text .jp {
+    opacity: 0;
 }
 
 .header_text:hover .en {
-    display: none;
+    opacity: 0;
 }
 
 .header_text:hover .jp {
-    display: inline;
+    opacity: 1;
 }
 .header_reserve{
     width: 10rem;
@@ -135,8 +152,16 @@ a{
     font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
+.header_reserve:hover{
+    color: #fff;
+    background-color: #1285c5;
 
+}
+.header_reserve:hover .header_text{
+    color: #fff;
+}
 .headerSns{
     display: flex;
     margin-left: 4rem;
@@ -210,7 +235,7 @@ a{
 }
 
 .mainVisual_title{
-    padding-top: 30px;
+    margin-top: 30px;
     font-size: 2.2rem;
     font-weight: bold;
     letter-spacing: 0.1em;
@@ -271,7 +296,7 @@ a{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 200px;
+    margin-top: 200px;
 }
 
 .mainSection_title{
@@ -379,8 +404,8 @@ a{
 }
 
 .menuSection_inner{
-    padding-top: 4rem;
-    padding-bottom: 6rem;
+    margin-top: 4rem;
+    margin-bottom: 6rem;
 }
 
 .menuSection_title{
@@ -555,7 +580,7 @@ a{
 }
 
 .blog_container{
-    padding-top: 3rem;
+    margin-top: 3rem;
     margin-bottom: 3rem;
 }
 
@@ -973,7 +998,7 @@ a{
 }
 
 .mainVisual_title{
-    padding-top: 40px;
+    margin-top: 40px;
     font-size: 3rem;
     font-weight: bold;
     letter-spacing: 0.1em;
@@ -1134,8 +1159,8 @@ a{
 }
 
 .menuSection_inner{
-    padding-top: 4rem;
-    padding-bottom: 6rem;
+    margin-top: 4rem;
+    margin-bottom: 6rem;
 }
 
 .menuSection_title{
@@ -1319,7 +1344,7 @@ a{
 }
 
 .blog_container{
-    padding-top: 3rem;
+    margin-top: 3rem;
     margin-bottom: 3rem;
 }
 
@@ -1695,7 +1720,7 @@ a{
 }
 
 .mainVisual_title{
-    padding-top: 30px;
+    margin-top: 30px;
     font-size: 2.2rem;
     font-weight: bold;
     letter-spacing: 0.1em;
@@ -1843,8 +1868,8 @@ a{
 
 .menuSection_inner{
     padding: 0;
-    padding-top: 5rem;
-    padding-bottom: 8rem;
+    margin-top: 5rem;
+    margin-bottom: 8rem;
 }
 
 
@@ -2024,7 +2049,7 @@ a{
 }
 
 .blog_container{
-    padding-top: 3rem;
+    margin-top: 3rem;
     margin-bottom: 3rem;
 }
 
@@ -2286,21 +2311,38 @@ a{
     list-style: none;
 }
 
-.header_text{
+.header_text {
+    position: relative;
     font-size: 1.1rem;
     letter-spacing: 0.05em;
     font-weight: bold;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    height: 1.5em; /* 高さを安定させる */
+    overflow: hidden;
 }
+
+.header_text .en,
 .header_text .jp {
-    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: opacity 0.2s ease-in-out;
+    white-space: nowrap;
+}
+
+.header_text .jp {
+    opacity: 0;
 }
 
 .header_text:hover .en {
-    display: none;
+    opacity: 0;
 }
 
 .header_text:hover .jp {
-    display: inline;
+    opacity: 1;
 }
 .header_reserve{
     width: 10rem;
@@ -2313,8 +2355,16 @@ a{
     font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
+.header_reserve:hover{
+    color: #fff;
+    background-color: #1285c5;
 
+}
+.header_reserve:hover .header_text{
+    color: #fff;
+}
 .headerSns{
     display: flex;
     margin-left: 4rem;
@@ -2400,7 +2450,7 @@ a{
 }
 
 .mainVisual_title{
-    padding-top: 30px;
+    margin-top: 30px;
     font-size: 2.2rem;
     font-weight: bold;
     letter-spacing: 0.1em;
@@ -2473,7 +2523,7 @@ a{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 200px;
+    margin-top: 200px;
 }
 
 .mainSection_title{
@@ -2589,8 +2639,8 @@ a{
 }
 
 .menuSection_inner{
-    padding-top: 3rem;
-    padding-bottom: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
 }
 
 .menuSection_title{
@@ -2816,8 +2866,7 @@ a{
 }
 
 .blog_container{
-    padding-top: 3rem;
-    margin-bottom: 3rem;
+    margin-top: 3rem;
 }
 
 .blog_number{
@@ -2885,9 +2934,7 @@ a{
     font-weight: bold;
     letter-spacing: 0.1em;
 }
-.access{
-    margin-bottom: 3rem;
-}
+
 .access_title{
     margin-bottom: 3rem;
     font-size: 1.8rem;
